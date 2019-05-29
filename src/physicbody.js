@@ -1,3 +1,7 @@
+/**
+ * Physic body
+ * Represents a body susceptible to the physical laws.
+ */
 class PhysicBody {
   constructor() {
 
@@ -7,18 +11,26 @@ class PhysicBody {
 
     this.mass = 0;
     this.gravity = 0;
-    
+
     this.width = 0;
     this.height = 0;
   }
 
+  /**
+  *  Add mass to the current body's mass.
+  *  @param  {Number}  mass  The mass that needs to be added
+  */
   applyMass(mass) {
     this.mass += mass;
   }
 
-  applyLocation(x, y) {
-    this.location.x += x;
-    this.location.y += y;
+  /**
+  *  Add relative location to the current location.
+  *  The body location will be relativity increased by the pointed location in the x an y axis.
+  *  @param  {p5.Vector}  location  The location to be added
+  */
+  applyLocation(location) {
+    this.location.add(location);
   }
 
   applyForce(force) {
@@ -50,15 +62,15 @@ class PhysicBody {
 
   attract(mover) {
     let direction = p5.Vector.sub(this.location, mover.location);
-    
+
     let d = direction.mag();
     d = constrain(d, 5.0, 25.0);
-    
+
     direction.normalize();
 
     let strength = (1 * this.mass * mover.mass) / (d * d);
     direction.mult(strength);
-    
+
     return direction;
   }
 
@@ -85,10 +97,10 @@ class PhysicBody {
     ellipseColor.setAlpha(90);
 
     fill(ellipseColor);
-    
+
     this.width = this.mass * 20;
     this.height = this.mass * 20;
-    
+
     ellipse(this.location.x, this.location.y, this.width, this.height);
     pop();
   }
@@ -102,10 +114,10 @@ class PhysicBody {
     rectColor.setAlpha(99);
 
     fill(rectColor);
-    
+
     this.width = this.mass * 20;
     this.height = this.mass * 10;
-    
+
     rect(this.location.x, this.location.y, this.width, this.height);
     pop();
   }
