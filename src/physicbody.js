@@ -11,9 +11,6 @@ class PhysicBody {
 
     this.mass = 0;
     this.gravity = 0;
-
-    this.width = 0;
-    this.height = 0;
   }
 
   /**
@@ -86,40 +83,6 @@ class PhysicBody {
     gravity.mult(this.mass);
 
     this.applyForce(gravity);
-  }
-
-  displayEllipse(_color, borderColor) {
-    push();
-    stroke(borderColor || 255);
-    strokeWeight(2);
-
-    let ellipseColor = color(_color || 127);
-    ellipseColor.setAlpha(90);
-
-    fill(ellipseColor);
-
-    this.width = this.mass * 20;
-    this.height = this.mass * 20;
-
-    ellipse(this.location.x, this.location.y, this.width, this.height);
-    pop();
-  }
-
-  displayRect(_color, borderColor) {
-    push();
-    stroke(255);
-    strokeWeight(2);
-
-    let rectColor = color(_color);
-    rectColor.setAlpha(99);
-
-    fill(rectColor);
-
-    this.width = this.mass * 20;
-    this.height = this.mass * 10;
-
-    rect(this.location.x, this.location.y, this.width, this.height);
-    pop();
   }
 
   fixDirection() {
