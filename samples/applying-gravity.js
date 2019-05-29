@@ -15,15 +15,6 @@ function draw() {
   drawBlueBall();
 }
 
-function applyFriction(ball) {
-  let friction = ball.velocity.copy();
-  
-  friction.normalize();
-  friction.mult(-0.01);
-  
-  ball.applyForce(friction);
-}
-
 function setupYellowBall() {
   yellowBall = new Ball();
   yellowBall.mass = 1;
