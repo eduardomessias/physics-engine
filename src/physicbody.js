@@ -49,18 +49,17 @@ class PhysicBody {
   }
 
   attract(mover) {
-    let direction = this.location.copy();
-    direction.sub(mover.location);
-
+    let direction = p5.Vector.sub(this.location, mover.location);
+    
     let d = direction.mag();
+    d = constrain(d, 5.0, 25.0);
+    
     direction.normalize();
 
-    let m = (this.gravity * this.mass * mover.mass) / Math.pow(d);
-
-    if (isFinite(m))
-      direction.mult(m);
-
-    mover.applyForce(direction);
+    let strength = (1 * this.mass * mover.mass) / (d * d);
+    direction.mult(strength);
+    
+    return direction;
   }
 
   applyPhysics() {
