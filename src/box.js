@@ -9,7 +9,7 @@ class Box extends PhysicBody {
     this.width = 20;
     this.height = 10;
     this.mode = CENTER;
-    this.translate = {
+    this.translate = new {
       x: width / 2,
       y: height / 2
     }
