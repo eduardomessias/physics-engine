@@ -9,10 +9,7 @@ class Box extends PhysicBody {
     this.width = 20;
     this.height = 10;
     this.mode = CENTER;
-    this.translate = {
-      x: width / 2,
-      y: height / 2
-    }
+    this.translation = createVector(width / 2, height / 2);
     this.rotation = 0;
   }
   
@@ -28,10 +25,14 @@ class Box extends PhysicBody {
 
     fill(rectColor);
     
-    translate(this.translate.x, this.translate.y);
+    translate(this.translation.x, this.translation.y);
     rotate(this.rotation);
 
     rect(this.location.x, this.location.y, this.width, this.height);
     pop();
+  }
+  
+  resetLocation() {
+    this.location = createVector(0, 0);
   }
 }
