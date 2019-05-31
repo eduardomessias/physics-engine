@@ -19,7 +19,7 @@ class Ball extends PhysicBody {
 
     fill(ellipseColor);
     
-    ellipse(this.location.x, this.location.y, this.radius, this.radius);
+    ellipse(this.location.x, this.location.y, this.radius.x, this.radius.y);
     pop();
   }
 }
