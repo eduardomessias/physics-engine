@@ -26,7 +26,7 @@ function draw() {
 }
 
 function setupYellowBox() {
-  yellowBox = new Box();
+  yellowBox = new Rectangle();
   yellowBox.color = "#ffeaa7";
   yellowBox.mass = 1;
   yellowBox.translation.x = width / 2 - 100;
@@ -35,7 +35,7 @@ function setupYellowBox() {
 }
 
 function setupBlueBall() {
-  blueBall = new Ball();
+  blueBall = new Ellipse();
   blueBall.color = "#74b9ff";
   blueBall.mass = 4;
   blueBall.location.x = width / 2;

@@ -16,7 +16,7 @@ function draw() {
 }
 
 function setupYellowBall() {
-  yellowBall = new Ball();
+  yellowBall = new Ellipse();
   yellowBall.mass = 1;
   yellowBall.radius = 20;
   yellowBall.location.x = width / 2;
@@ -24,7 +24,7 @@ function setupYellowBall() {
 }
 
 function setupBlueBall() {
-  blueBall = new Ball();
+  blueBall = new Ellipse();
   blueBall.mass = 2;
   blueBall.radius = 40;
   blueBall.location.x = width / 2 + 40;

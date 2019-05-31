@@ -42,21 +42,21 @@ function applyCollisions() {
 }
 
 function setupYellowBall() {
-  yellowBall = new Ball();
+  yellowBall = new Ellipse();
   yellowBall.mass = 1;
   yellowBall.radius = 20;
   yellowBall.location.x = width / 2;
 }
 
 function setupBlueBall() {
-  blueBall = new Ball();
+  blueBall = new Ellipse();
   blueBall.mass = 2;
   blueBall.radius = 40;
   blueBall.location.x = width / 2 + 40;
 }
 
 function setupGreenBox() {
-  greenBox = new Box();
+  greenBox = new Rectangle();
   greenBox.mass = 20;
   greenBox.width = 400;
   greenBox.height = 200;
