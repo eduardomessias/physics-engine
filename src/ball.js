@@ -6,7 +6,7 @@ class Ball extends PhysicBody {
     this.borderColor = 255;
     this.borderWeight = 2;
     this.alpha = 90;
-    this.radius = 20;
+    this.radius = createVector(20, 20);
   }
 
   display() {
