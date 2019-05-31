@@ -1,5 +1,3 @@
-import { Body } from 'body.js';
-
 /**
  * Eduardo Messias, 31/05/2019
  */
@@ -12,10 +10,13 @@ class Ellipse extends Body {
     this.borderWeight = 2;
     this.alpha = 90;
     this.radius = createVector(20, 20);
+    this.translation = createVector(width / 2, height / 2);
   }
 
   display() {
     push();
+    translate(this.translation.x, this.translation.y);
+    
     stroke(this.borderColor);
     strokeWeight(this.borderWeight);
 

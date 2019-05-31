@@ -2,7 +2,7 @@
  * Physic body
  * Represents a body susceptible to the physical laws.
  */
-export class Body {
+class Body {
   constructor() {
 
     this.location = createVector(0, 0);

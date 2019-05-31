@@ -1,5 +1,3 @@
-import { Body } from 'body.js';
-
 /**
  * Eduardo Messias, 30/05/2019.
  * Box is an extension of the PhysicBody object.
